@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/persona")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PersonaController {
 
     @Autowired

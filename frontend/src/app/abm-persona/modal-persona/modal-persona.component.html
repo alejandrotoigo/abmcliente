@@ -1,0 +1,53 @@
+<form novalidate [formGroup]="formPersona" (ngSubmit)=registrarEditarPersona()>
+
+  <label class="title"><strong>{{titulo}}</strong></label>
+  <mat-divider></mat-divider>
+  <br>
+  <mat-dialog-content>
+
+    <div fxLayout="row">
+      <div fxLayout="column">
+        <mat-form-field>
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="perNombre">
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="column">
+        <mat-form-field>
+          <mat-label>Apellido</mat-label>
+          <input matInput formControlName="perApellido">
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="column">
+        <mat-form-field>
+          <mat-label>Tipo de documento</mat-label>
+          <mat-select formControlName="perTipoDocumento">
+            <mat-option value="DNI">DNI</mat-option>
+            <mat-option value="Pasaporte">Pasaporte</mat-option>
+            <mat-option value="Cédula">Cédula</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </div>
+    </div>
+    <div fxLayout="row">
+      <mat-form-field>
+        <mat-label>Numero de documento</mat-label>
+        <input matInput type="number" formControlName="perNumeroDocumento">
+      </mat-form-field>
+
+      <mat-form-field>
+
+        <input matInput [max]="minDate" [matDatepicker]="picker" placeholder="Eliga una fecha" readonly formControlName="perFechaNacimiento">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button type="submit">Guardar</button>
+    <button mat-button type="button" (click)="cerrarDialogo()">Cancelar</button>
+  </mat-dialog-actions>
+</form>
