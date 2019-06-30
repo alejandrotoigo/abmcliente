@@ -1,6 +1,16 @@
 # ABMPersona
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+## BackEnd
+
+The backend was generated with Maven.
+
+Before run the backend, you need to create database persona in mysql. Then, go to SpringConfig.java and change the username and password in line 35 and 36
+
+In root folder type "mvn clean package tomcat7:run" for run backend
+
+## FrontEnd
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8. You need to positioning in folder frontend.
 
 ## Development server
 
